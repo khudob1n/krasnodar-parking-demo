@@ -3,8 +3,10 @@ name: ci
 on:
   push:
     branches: ["**"]
-    tags: ["v*"]
   pull_request:
+  # Опубликованный на GitHub релиз получает APK, собранный здесь из его тега.
+  release:
+    types: [published]
 
 permissions:
   contents: read
@@ -47,8 +49,7 @@ jobs:
           path: android/app/build/outputs/apk/*/*.apk
 
   release:
-    # Тег v* — версия: релиз с APK, собранным здесь же из этого коммита.
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: github.event_name == 'release'
     needs: [server, android]
     runs-on: ubuntu-latest
     permissions:
@@ -62,10 +63,10 @@ jobs:
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
+          TAG: ${{ github.event.release.tag_name }}
         run: |
           cp apk/release/app-release.apk "krasnodar-parking-${TAG}.apk"
           sha256sum "krasnodar-parking-${TAG}.apk" > "krasnodar-parking-${TAG}.apk.sha256"
+          gh release upload "$TAG" "krasnodar-parking-${TAG}.apk" "krasnodar-parking-${TAG}.apk.sha256" --clobber
           notes="docs/releases/${TAG}.md"
-          gh release create "$TAG" "krasnodar-parking-${TAG}.apk" "krasnodar-parking-${TAG}.apk.sha256" \
-            --title "$TAG" --notes-file "$notes" --prerelease
+          if [ -f "$notes" ]; then gh release edit "$TAG" --notes-file "$notes"; fi
