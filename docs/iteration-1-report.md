@@ -47,14 +47,14 @@
 | Сервер | запуск и `curl` meta, search, parkings (gzip 77 КБ) | отвечает |
 | Kotlin shared | `./gradlew -PwithAndroid=false :shared:jvmTest` | 18 тестов, все прошли, включая чтение настоящего снимка |
 | Шрифт | fontTools: 650 символов, кириллица, цифры, ₽ | есть |
+| Android на Mac владельца (Android Studio JBR 25, SDK build-tools 36) | `./gradlew :shared:jvmTest :app:testDebugUnitTest :app:assembleRelease` | BUILD SUCCESSFUL: 18 + 2 теста; release APK ~60 МБ, подпись debug-ключом (v2), sha256 `391a8348…44da` |
 
-**Не запускалось**: сборка APK, unit-тест `StatusTextTest` приложения,
-экраны на эмуляторе, работа MapLibre. Причина — сетевая политика облачного
-окружения закрывает `dl.google.com`, откуда берутся Android Gradle Plugin,
-Compose и SDK (`Could not resolve com.android.tools.build:gradle:8.12.0`).
-Код Android написан, но не скомпилирован: возможны ошибки сборки, которые
-CI или первая локальная сборка покажут. Живой импорт с портала тоже не
-выполнялся: закрыт `parkingkrd.ru`.
+**Не запускалось**: приложение на эмуляторе или устройстве, работа MapLibre
+на экране. В облачном окружении Android не собирается: `dl.google.com`
+закрыт сетевой политикой, поэтому APK собран на Mac владельца. Для этого
+понадобились две правки: Gradle 9.5.1 (8.14 не работает на JDK 25, 9.6+
+несовместим с AGP 8.x) и импорт `java.util.Properties` в `app/build.gradle.kts`.
+Живой импорт с портала не выполнялся: закрыт `parkingkrd.ru`.
 
 ## Данных пока нет
 
