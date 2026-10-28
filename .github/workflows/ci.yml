@@ -2,7 +2,12 @@ name: ci
 
 on:
   push:
+    branches: ["**"]
+    tags: ["v*"]
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   server:
@@ -34,9 +39,33 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-      - uses: android-actions/setup-android@v3
-      - run: ./gradlew --no-daemon :shared:jvmTest :app:assembleDebug :app:testDebugUnitTest
+      # Android SDK уже установлен в образе ubuntu-latest (ANDROID_HOME).
+      - run: ./gradlew --no-daemon :shared:jvmTest :app:testDebugUnitTest :app:assembleDebug :app:assembleRelease
       - uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: android/app/build/outputs/apk/*/*.apk
+
+  release:
+    # Тег v* — версия: релиз с APK, собранным здесь же из этого коммита.
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [server, android]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: app-debug
+          path: apk
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          cp apk/release/app-release.apk "krasnodar-parking-${TAG}.apk"
+          sha256sum "krasnodar-parking-${TAG}.apk" > "krasnodar-parking-${TAG}.apk.sha256"
+          notes="docs/releases/${TAG}.md"
+          gh release create "$TAG" "krasnodar-parking-${TAG}.apk" "krasnodar-parking-${TAG}.apk.sha256" \
+            --title "$TAG" --notes-file "$notes" --prerelease
