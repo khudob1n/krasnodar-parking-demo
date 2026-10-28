@@ -1,0 +1,3 @@
+data/raw/*.json -diff
+data/snapshot/*.json -diff
+data/snapshot/*.geojson -diff

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/khudob1n/krasnodar-parking-demo/schema/parkings.schema.json",
+  "title": "Снимок каталога парковок Краснодара (schema_version 1)",
+  "type": "object",
+  "required": ["schema_version", "version", "generated_at", "sources", "counts", "parkings"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "version": { "type": "string", "pattern": "^[0-9a-f]{16}$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "publisher", "source_url", "endpoint_url", "fetched_at", "fetched_at_precision", "raw_sha256", "verified_against_portal"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "publisher": { "type": "string" },
+          "source_url": { "type": "string", "pattern": "^https://" },
+          "endpoint_url": { "type": ["string", "null"] },
+          "fetched_at": { "type": "string", "format": "date-time" },
+          "fetched_at_precision": { "enum": ["exact", "not_later_than", "user_reported"] },
+          "raw_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "provenance": { "type": "string" },
+          "verified_against_portal": { "type": "boolean" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["total", "paid", "free", "with_geometry", "paid_places", "excluded"],
+      "additionalProperties": false,
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "paid": { "type": "integer", "minimum": 0 },
+        "free": { "type": "integer", "minimum": 0 },
+        "with_geometry": { "type": "integer", "minimum": 0 },
+        "paid_places": { "type": "integer", "minimum": 0 },
+        "excluded": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "parkings": { "type": "array", "items": { "$ref": "#/$defs/parking" } }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number", "minimum": 44.85, "maximum": 45.3 },
+        "lon": { "type": "number", "minimum": 38.65, "maximum": 39.4 }
+      }
+    },
+    "clock": { "type": ["string", "null"], "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$" },
+    "parking": {
+      "type": "object",
+      "required": ["id", "portal_id", "kind", "paid", "address", "location", "segments", "geometry_status", "tariff", "capacity", "free_places", "tariff_zone", "status", "in_building", "photos_count", "issues", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z]+:[0-9]+$" },
+        "portal_id": { "type": "integer", "minimum": 1 },
+        "kind": { "enum": ["street", "lot", "free"] },
+        "paid": { "type": "boolean" },
+        "address": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "location": { "oneOf": [{ "$ref": "#/$defs/point" }, { "type": "null" }] },
+        "segments": {
+          "type": "array",
+          "items": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "$ref": "#/$defs/point" } }
+        },
+        "geometry_status": { "enum": ["segments", "point_only", "none"] },
+        "tariff": {
+          "type": "object",
+          "required": ["price_per_hour_rub", "paid_from", "paid_to", "text"],
+          "additionalProperties": false,
+          "properties": {
+            "price_per_hour_rub": { "type": ["number", "null"], "minimum": 0 },
+            "paid_from": { "$ref": "#/$defs/clock" },
+            "paid_to": { "$ref": "#/$defs/clock" },
+            "text": { "type": "string" }
+          }
+        },
+        "capacity": {
+          "type": "object",
+          "required": ["total", "disabled"],
+          "additionalProperties": false,
+          "properties": {
+            "total": { "type": ["integer", "null"], "minimum": 0 },
+            "disabled": { "type": ["integer", "null"], "minimum": 0 }
+          }
+        },
+        "free_places": {
+          "type": "object",
+          "required": ["value", "updated_at", "status"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "type": ["integer", "null"], "minimum": 0 },
+            "updated_at": { "type": ["string", "null"], "format": "date-time" },
+            "status": { "enum": ["available", "no_data"] },
+            "note": { "type": "string" }
+          }
+        },
+        "tariff_zone": { "type": ["string", "null"] },
+        "status": { "type": ["string", "null"] },
+        "in_building": { "type": "boolean" },
+        "photos_count": { "type": "integer", "minimum": 0 },
+        "issues": { "type": "array", "items": { "type": "string" } },
+        "source": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "geometry_status": { "const": "segments" } } },
+          "then": { "properties": { "segments": { "minItems": 1 } } }
+        },
+        {
+          "if": { "properties": { "geometry_status": { "const": "point_only" } } },
+          "then": { "properties": { "location": { "$ref": "#/$defs/point" }, "segments": { "maxItems": 0 } } }
+        },
+        {
+          "if": { "properties": { "free_places": { "properties": { "status": { "const": "no_data" } } } } },
+          "then": { "properties": { "free_places": { "properties": { "value": { "type": "null" } } } } }
+        }
+      ]
+    }
+  }
+}

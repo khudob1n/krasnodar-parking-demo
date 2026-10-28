@@ -1,0 +1,13 @@
+{
+  "file": "parkingkrd-zones-2026-10-28.json",
+  "sha256": "bccab78c6e2c598917193dff84de138aaf6a667d63c1192c1823f28d9bba05c4",
+  "publisher": "parkingkrd.ru (портал «Городские парковки»)",
+  "source_url": "https://parkingkrd.ru/",
+  "endpoint_url": "https://parkingkrd.ru/signingproxy/parkings",
+  "endpoint_note": "Адрес запроса сообщил владелец проекта 2026-10-28. 2026-10-28 ~19:10 UTC публичный GET без cookies и авторизации вернул JSON с массивом data и теми же полями записей (проверено частично: просмотр ответа был обрезан на ~91 записи). Полный ответ из облачного окружения не загружен: домен закрыт сетевой политикой.",
+  "fetched_at": "2026-10-28T18:56:00Z",
+  "fetched_at_precision": "user_reported",
+  "fetched_at_note": "Со слов владельца: «сегодня, минуту назад» (сообщение 2026-10-28 18:57 UTC). Файл побайтно совпадает с data/zones.json из khudob1n/krasnodar-parking-ai@f922913 (коммит 2026-10-13T10:15:51Z): за 15 дней ответ портала не изменился.",
+  "provenance": "Ручной парсинг портала владельцем проекта, передан в проект 2026-10-28",
+  "verified_against_portal": false
+}

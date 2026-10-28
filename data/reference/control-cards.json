@@ -1,0 +1,238 @@
+[
+  {
+    "portal_id": 1446,
+    "address_contains": [
+      "Дзержинского",
+      "Дальней",
+      "Шоссе Нефтяников"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 179,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1444,
+    "address_contains": [
+      "Клубной",
+      "Дзержинского"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 38,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1447,
+    "address_contains": [
+      "Калинина",
+      "Октябрьской",
+      "Кирова"
+    ],
+    "price_per_hour_rub": 60.0,
+    "capacity_total": 17,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1445,
+    "address_contains": [
+      "Дальней",
+      "Рашпилевской",
+      "Дзержинского"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 37,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1448,
+    "address_contains": [
+      "Лукьяненко",
+      "Калинина",
+      "Красных Партизан"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 44,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1437,
+    "address_contains": [
+      "Степана Разина",
+      "Ставропольской",
+      "КИМ"
+    ],
+    "price_per_hour_rub": 30.0,
+    "capacity_total": 44,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1440,
+    "address_contains": [
+      "Фестивальной",
+      "Тургенева",
+      "Воровского"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 39,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1441,
+    "address_contains": [
+      "Олимпийской",
+      "Тургенева",
+      "Воровского"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 24,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1439,
+    "address_contains": [
+      "Юннатов",
+      "40-летия Победы",
+      "Клинической"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 9,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1442,
+    "address_contains": [
+      "Карла Маркса",
+      "Гагарина",
+      "Рылеева"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 57,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1443,
+    "address_contains": [
+      "Брюсова",
+      "Гагарина",
+      "Рылеева"
+    ],
+    "price_per_hour_rub": 40.0,
+    "capacity_total": 47,
+    "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+    "source_published": "2025-10-02",
+    "source_kind": "СМИ со ссылкой на департамент транспорта и дорожного хозяйства"
+  },
+  {
+    "portal_id": 1479,
+    "address_contains": [
+      "Хакурате",
+      "Рашпилевской",
+      "Красной"
+    ],
+    "price_per_hour_rub": 60.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1478,
+    "address_contains": [
+      "Красной",
+      "Головатого",
+      "Калинина"
+    ],
+    "price_per_hour_rub": 60.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1477,
+    "address_contains": [
+      "Мира",
+      "90"
+    ],
+    "price_per_hour_rub": 50.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1476,
+    "address_contains": [
+      "Мира",
+      "Гудимы",
+      "Суворова"
+    ],
+    "price_per_hour_rub": 50.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1483,
+    "address_contains": [
+      "Буденного",
+      "Кирова",
+      "Фрунзе"
+    ],
+    "price_per_hour_rub": 60.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1481,
+    "address_contains": [
+      "Захарова",
+      "Станкостроительной",
+      "Индустриальной"
+    ],
+    "price_per_hour_rub": 40.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1480,
+    "address_contains": [
+      "Коржнева",
+      "Полуяна"
+    ],
+    "price_per_hour_rub": 40.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  },
+  {
+    "portal_id": 1482,
+    "address_contains": [
+      "Алтайской",
+      "Днепровской",
+      "Селезнева"
+    ],
+    "price_per_hour_rub": 30.0,
+    "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+    "source_published": "2026-07-08",
+    "source_kind": "СМИ: план запуска парковок до конца 2026 года"
+  }
+]

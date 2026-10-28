@@ -1,0 +1,254 @@
+{
+  "generated_at": "2026-10-28T19:00:00Z",
+  "snapshot_version": "6e4a550cbbfb11c1",
+  "schema": {
+    "records": 1716,
+    "total_length": 1716,
+    "missing_fields": {},
+    "unknown_fields": {},
+    "records_invalid": null
+  },
+  "problems_by_code": {
+    "location_out_of_bounds": 4,
+    "paid_with_zero_price": 1,
+    "tariff_text_mismatch": 1
+  },
+  "problems": [
+    {
+      "portal_id": 1427,
+      "index": 255,
+      "code": "tariff_text_mismatch",
+      "detail": "в тексте 08:00–20:00, в полях 08:00–19:00",
+      "fatal": false
+    },
+    {
+      "portal_id": 3333,
+      "index": 312,
+      "code": "location_out_of_bounds",
+      "detail": "точка 0.000000, 0.000000 вне Краснодара",
+      "fatal": false
+    },
+    {
+      "portal_id": 4020,
+      "index": 318,
+      "code": "paid_with_zero_price",
+      "detail": "платная парковка с ценой 0",
+      "fatal": false
+    },
+    {
+      "portal_id": 4028,
+      "index": 322,
+      "code": "location_out_of_bounds",
+      "detail": "точка 0.000000, 0.000000 вне Краснодара",
+      "fatal": false
+    },
+    {
+      "portal_id": 12677,
+      "index": 999,
+      "code": "location_out_of_bounds",
+      "detail": "точка 42.848373, 74.270911 вне Краснодара",
+      "fatal": false
+    },
+    {
+      "portal_id": 13038,
+      "index": 1360,
+      "code": "location_out_of_bounds",
+      "detail": "точка 42.870770, 74.505335 вне Краснодара",
+      "fatal": false
+    }
+  ],
+  "excluded_portal_ids": [],
+  "checks": [
+    {
+      "name": "schema_required_fields",
+      "ok": true,
+      "detail": "записей без обязательных полей: 0",
+      "blocking": false
+    },
+    {
+      "name": "schema_unknown_fields",
+      "ok": true,
+      "detail": "новые поля источника: []",
+      "blocking": false
+    },
+    {
+      "name": "total_length_matches",
+      "ok": true,
+      "detail": "totalLength=1716, записей=1716 (расхождение — признак пагинации)",
+      "blocking": true
+    },
+    {
+      "name": "fatal_share",
+      "ok": true,
+      "detail": "исключено 0 из 1716 (0.00%)",
+      "blocking": true
+    },
+    {
+      "name": "unique_ids",
+      "ok": true,
+      "detail": "дубликатов id в каталоге: 0",
+      "blocking": true
+    },
+    {
+      "name": "duplicate_addresses",
+      "ok": false,
+      "detail": "одинаковый адрес и тип у разных id: 47 групп [[12009 12548] [12034 12493] [12082 12185] [12096 12839] [12113 12291 12292] [12120 12168] [12129 13259] [12169 12170] [12179 12180] [12217 12908]]",
+      "blocking": false
+    },
+    {
+      "name": "paid_geometry_share",
+      "ok": true,
+      "detail": "платных с геометрией 321 из 323 (99.4%)",
+      "blocking": true
+    },
+    {
+      "name": "control_cards",
+      "ok": true,
+      "detail": "карточек: 19, совпали: 19",
+      "blocking": true
+    }
+  ],
+  "control_cards": [
+    {
+      "portal_id": 1446,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1444,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1447,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1445,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1448,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1437,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1440,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1441,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1439,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1442,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1443,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://kubnews.ru/obshchestvo/2025/10/02/eshche-15-munitsipalnykh-platnykh-parkovok-otkrylis-v-krasnodare-gde-oni-nakhodyatsya/",
+      "source_published": "2025-10-02"
+    },
+    {
+      "portal_id": 1479,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1478,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1477,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1476,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1483,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1481,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1480,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    },
+    {
+      "portal_id": 1482,
+      "ok": true,
+      "mismatches": [],
+      "source_url": "https://93.ru/text/gorod/2026/07/08/76519991/",
+      "source_published": "2026-07-08"
+    }
+  ],
+  "counts": {
+    "total": 1716,
+    "paid": 323,
+    "free": 1393,
+    "with_geometry": 1712,
+    "paid_places": 15134,
+    "excluded": 0
+  }
+}
