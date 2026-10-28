@@ -18,9 +18,25 @@ android {
         buildConfigField("String", "CATALOG_BASE_URL", "\"${providers.gradleProperty("catalogBaseUrl").get()}\"")
     }
 
+    // Релиз демо подписывается ключом из keystore.properties (не в git).
+    // Если файла нет — debug-ключом: такой APK ставится, но не годится для магазина.
+    val keystoreProps = rootProject.file("keystore.properties")
+    signingConfigs {
+        if (keystoreProps.exists()) {
+            create("demo") {
+                val p = java.util.Properties().apply { keystoreProps.inputStream().use(::load) }
+                storeFile = rootProject.file(p.getProperty("storeFile"))
+                storePassword = p.getProperty("storePassword")
+                keyAlias = p.getProperty("keyAlias")
+                keyPassword = p.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.findByName("demo") ?: signingConfigs.getByName("debug")
         }
     }
     compileOptions {

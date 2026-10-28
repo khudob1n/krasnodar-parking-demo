@@ -8,3 +8,6 @@ server/importer
 server/server
 data/snapshot/validation-report.failed.json
 *.tmp
+keystore.properties
+*.jks
+*.keystore
